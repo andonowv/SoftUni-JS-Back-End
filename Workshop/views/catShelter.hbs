@@ -1,0 +1,21 @@
+<form action="/newHome/{{_id}}" method="POST" class="cat-form">
+    <h2>Shelter the cat</h2>
+    <img src="{{image}}" alt="">
+    <label for="name">Name</label>
+    <input type="text" id="name" value="{{name}}" disabled>
+    <label for="description">Description</label>
+    {{#if description}}
+    <textarea id="description" disabled>{{description}}</textarea>
+    {{else}}
+    <textarea id="description" disabled>No description</textarea>
+    {{/if}}
+    <label for="group">Breed</label>
+    <select id="group" disabled>
+        {{#if breed}}
+        <option value="{{breed._id}}">{{breed.breed}}</option>
+        {{else}}
+        <option value="Unknown">Unknown</option>
+        {{/if}}
+    </select>
+    <button type="submit">SHELTER THE CAT</button>
+</form>
